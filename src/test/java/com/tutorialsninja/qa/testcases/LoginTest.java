@@ -36,6 +36,7 @@ public class LoginTest extends Base {
 		return data;
 	}
 
+	
 	@Test(priority = 1, dataProvider = "validData")
 	public void verifyLoginWithValidCredential(String email, String password) {
 		AccountPage accountPage = loginPage.loginAction(email, password);
