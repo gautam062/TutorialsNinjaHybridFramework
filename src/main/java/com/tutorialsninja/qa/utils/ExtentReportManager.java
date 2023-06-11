@@ -13,11 +13,13 @@ public class ExtentReportManager{
 	
 	public static ExtentReports generateExtentReport() {
 		
-		Date date = new Date();
-		String timestamp = date.toString().replace(" ", "_").replace(":", "_");
+		/*
+		 * Date date = new Date(); String timestamp = date.toString().replace(" ",
+		 * "_").replace(":", "_");
+		 */
 		
 		ExtentReports extentReport = new ExtentReports();
-		File extentReportFile = new File(System.getProperty("user.dir")+"\\test-output\\ExtentReports\\extentReport_"+timestamp+".html");
+		File extentReportFile = new File(System.getProperty("user.dir")+"\\test-output\\ExtentReports\\extentReport.html");
 		ExtentSparkReporter sparkReporter = new ExtentSparkReporter(extentReportFile);
 		
 		sparkReporter.config().setTheme(Theme.DARK);
