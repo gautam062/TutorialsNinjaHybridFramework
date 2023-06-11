@@ -2,6 +2,7 @@ package com.tutorialsninja.qa.utils;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.Date;
 import java.util.Properties;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -12,8 +13,11 @@ public class ExtentReportManager{
 	
 	public static ExtentReports generateExtentReport() {
 		
+		Date date = new Date();
+		String timestamp = date.toString().replace(" ", "_").replace(":", "_");
+		
 		ExtentReports extentReport = new ExtentReports();
-		File extentReportFile = new File(System.getProperty("user.dir")+"\\test-output\\ExtentReports\\extentReport.html");
+		File extentReportFile = new File(System.getProperty("user.dir")+"\\test-output\\ExtentReports\\extentReport_"+timestamp+".html");
 		ExtentSparkReporter sparkReporter = new ExtentSparkReporter(extentReportFile);
 		
 		sparkReporter.config().setTheme(Theme.DARK);

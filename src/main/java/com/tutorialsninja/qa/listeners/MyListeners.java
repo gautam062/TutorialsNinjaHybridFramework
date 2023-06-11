@@ -54,7 +54,7 @@ public class MyListeners implements ITestListener{
 		}
 		
 		String destinationScreenshotPath = Utilities.captureScreenshot(driver,result.getName());
-		
+		System.out.println("*******************************************************************");
 		extentTest.addScreenCaptureFromPath(destinationScreenshotPath);
 		extentTest.log(Status.INFO,result.getThrowable());
 		extentTest.log(Status.FAIL,result.getName()+" got failed");
